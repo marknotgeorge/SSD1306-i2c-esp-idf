@@ -24,8 +24,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         
+      - name: Semantic Releaser for All Languages
+        uses: jossef/action-semantic-releaser@v1
+        
       - name: espressif idf build
-      - uses: sebastianPsm/esp-idf-ci-action@1
+        uses: sebastianPsm/esp-idf-ci-action@1
+        env: 
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
      
