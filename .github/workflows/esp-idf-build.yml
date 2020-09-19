@@ -26,11 +26,12 @@ jobs:
         
       - name: Semantic Releaser for All Languages
         uses: jossef/action-semantic-releaser@v1
+        env: 
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
       - name: espressif idf build
         uses: sebastianPsm/esp-idf-ci-action@1
-        env: 
-            GITHUB_TOKEN: ${{ secrets.SEQVER_KEY }}
+        
 
 
      
